@@ -21,14 +21,15 @@ class Item extends Component
         string $title,
         string $content,
         string $image,
-        string $publication_date,
+        //?string $publication_date,
+        ?\Carbon\Carbon $publication_date, // Ensure it's a Carbon instance or null
         string $author,
         string $url
     ) {
         $this->title = $title;
         $this->content = $content;
         $this->image = $image;
-        $this->publication_date = $publication_date;
+        $this->publication_date = $publication_date ? $publication_date->format('F d, Y h:i A') : 'N/A';
         $this->author = $author;
         $this->url = $url;
     }

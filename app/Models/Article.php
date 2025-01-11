@@ -19,6 +19,10 @@ class Article extends Model
         'status',
         'publication_date',
     ];
+    
+    protected $casts =[
+            'publication_date' => 'datetime',
+    ];
 
 
     /**

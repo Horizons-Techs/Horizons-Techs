@@ -41,7 +41,13 @@
 
     <x-slider.slider>
         @foreach ($articles as $article)
-            <x-slider.item :title="$article->title" :publication_date='$article->publication_date' :content="$article->content" :image="$article->image" :author="$article->author->name" url="#" />
+            <x-slider.item 
+            :title="$article->title" 
+            :content="$article->content" 
+            :image="$article->image" 
+            :publication_date="$article->publication_date" 
+            :author="$article->author->name"
+            :url="'/articles/' . $article->id" />
         @endforeach
     </x-slider.slider>
 
